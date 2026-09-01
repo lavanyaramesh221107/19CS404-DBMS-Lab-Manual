@@ -38,123 +38,144 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="853" height="357" alt="image" src="https://github.com/user-attachments/assets/63c704a5-cf10-4992-8b8b-7c4c0831f86f" />
 
-```sql
--- Paste your SQL code below for Question 1
+
+```
+select * from medications where dosage=(select min(dosage) from medications);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="852" height="393" alt="image" src="https://github.com/user-attachments/assets/39f07c86-f56f-401e-9613-378e3c59405a" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="849" height="414" alt="image" src="https://github.com/user-attachments/assets/3a1b191f-19f4-49d0-8def-ac67507d6034" />
 
-```sql
--- Paste your SQL code below for Question 2
+
+```
+select name,city from customer where city in (select city from customer where id in (3,7));
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="738" height="642" alt="image" src="https://github.com/user-attachments/assets/e9cac8d9-1b59-4f4c-b9ca-c8d8a30d05ea" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="850" height="438" alt="image" src="https://github.com/user-attachments/assets/85307c90-cf97-474f-8a15-194baec96381" />
 
-```sql
--- Paste your SQL code below for Question 3
+
+```
+select * from medications where dosage=(select max(dosage) from medications);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="853" height="380" alt="image" src="https://github.com/user-attachments/assets/ea64bcf6-c1b0-4039-a164-e142f6c70dc5" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="849" height="362" alt="image" src="https://github.com/user-attachments/assets/d9c5282f-db06-4107-943f-b90cc152d555" />
 
-```sql
--- Paste your SQL code below for Question 4
+
+```
+select * from departments where length(department_name)>(select avg(length(department_name)) from departments);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="845" height="461" alt="image" src="https://github.com/user-attachments/assets/198c2396-92ab-4a07-baf8-92245b1eef51" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="853" height="423" alt="image" src="https://github.com/user-attachments/assets/9d54d671-688f-410d-a4d4-cdc3c162a4ef" />
 
-```sql
--- Paste your SQL code below for Question 5
+
+```
+select * from orders where purch_amt > (select avg(purch_amt) from orders where ord_date='2012-10-10');
 ```
 
 **Output:**
+<img width="851" height="354" alt="image" src="https://github.com/user-attachments/assets/1bb137e8-af59-4ac0-ac53-877506a8b2e4" />
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="853" height="489" alt="image" src="https://github.com/user-attachments/assets/41ceb422-8762-46cc-9d52-ad42361c4dda" />
 
-```sql
--- Paste your SQL code below for Question 6
+
+```
+select * from customers where salary=1500;
 ```
 
 **Output:**
+<img width="851" height="274" alt="image" src="https://github.com/user-attachments/assets/aa96488a-18ea-4bc6-b25b-eb4d34cb2bcd" />
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="851" height="420" alt="image" src="https://github.com/user-attachments/assets/44afae8a-caea-495b-bd9c-88380afe1239" />
 
-```sql
--- Paste your SQL code below for Question 7
+
+```
+select name from customer where phone in (select phone from customer group by phone having count(*)=1);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="849" height="606" alt="image" src="https://github.com/user-attachments/assets/16880b9a-aae4-411e-bdaa-fa854f8f81f5" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="851" height="456" alt="image" src="https://github.com/user-attachments/assets/e0dab895-9f25-4376-b71a-706b3b51a76b" />
 
-```sql
--- Paste your SQL code below for Question 8
+
+```
+select * from employee where age < (select avg(age) from employee where income>250000);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="849" height="399" alt="image" src="https://github.com/user-attachments/assets/df3abb14-a50d-4c02-bab7-abb390edb25b" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="850" height="602" alt="image" src="https://github.com/user-attachments/assets/53d68dce-1120-4238-8ed4-9511558f0dcd" />
 
-```sql
--- Paste your SQL code below for Question 9
+
+```
+select * from customers where salary>1500;
 ```
 
 **Output:**
+<img width="853" height="463" alt="image" src="https://github.com/user-attachments/assets/0a65e4ac-565a-4a78-9fcd-f75bdfa129fc" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="851" height="342" alt="image" src="https://github.com/user-attachments/assets/7598a13d-0096-4d31-a79e-3c041276ab81" />
 
-```sql
--- Paste your SQL code below for Question 10
+
+```
+SELECT grade, COUNT(*) 
+FROM customer 
+WHERE grade > (SELECT AVG(grade) 
+               FROM customer 
+               WHERE city = 'New York')
+GROUP BY grade;
+
 ```
 
 **Output:**
+<img width="851" height="451" alt="image" src="https://github.com/user-attachments/assets/173a34a2-528f-4f53-96d1-2e935b905831" />
 
-![Output10](output.png)
 
 
 ## RESULT
